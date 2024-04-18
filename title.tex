@@ -1,0 +1,19 @@
+\begin{titlepage}
+	\begin{tikzpicture}[overlay,remember picture]
+		% Title
+		\node[align=center] at ($(current page.center)+(0,-10)$)
+		{
+		{\fontsize{50}{72} \selectfont {{Inflation im laufe der Jahre}}} \\[1cm]
+		{\fontsize{16}{19.2} \selectfont \textcolor{orange}{ \bf Author Name}}\\[3pt]
+		Company Name\\[3pt]
+		Address};
+
+		\draw (0,0) -- (15,0);
+		\foreach \x in {0,3,6,9,12,15}
+		\draw (\x cm,4pt) -- (\x cm,-4pt);
+		\foreach \x/\descr in {0/1920,3/1940,6/1960,9/1980,12/2000,15/2020}
+		\draw (\x cm,0) node[below=3pt] {$\descr$};
+
+	\end{tikzpicture}
+
+\end{titlepage}
