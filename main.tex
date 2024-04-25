@@ -1,27 +1,54 @@
 \documentclass[12pt]{article}
 
-\usepackage[base]{babel}
+% Schrift - Calibri alternative
 \usepackage[sfdefault]{carlito}
 
+% Farben
+\usepackage[dvipsnames]{xcolor}
+
+% Referenzen Samlung
+\usepackage[backend=biber,style=verbose-trad2]{biblatex}
+\bibliography{references}
+
+% Diagramme
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+% Grafiken - Titelseite
 \usepackage{tikz}
-\usetikzlibrary{ shapes.geometric }
+\usetikzlibrary{shapes.geometric}
 \usetikzlibrary{calc}
+\usetikzlibrary{pgfplots.dateplot}
+\usepackage{tikzscale}
+
+% Tabellen
+\usepackage{booktabs}
+
+% wrapping
+\usepackage{wrapfig}
+
+% captions
 
 \usepackage{anyfontsize}
 \usepackage{setspace}
 \usepackage{lipsum}
-\usepackage{graphicx}
 \usepackage[margin=1in]{geometry} % Set margins
-\usepackage[dvipsnames]{xcolor}
 
 \begin{document}
 
+\pagenumbering{gobble}
 \include{title}
+\pagenumbering{arabic}
+
+\tableofcontents
 
 \include{introduction}
+
+\include{usa}
+
+\include{glossar}
+
+\printbibliography
 
 \end{document}
 

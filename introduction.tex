@@ -1,2 +1,55 @@
-\section{Introduction}
-Test
+\section{Einführung}
+Test\autocite{HUNDRET-YEARS-CPI}
+
+\subsection{Definition}
+
+\subsubsection{Konsumenten Preis Index}
+
+
+Ein Konsumenten Preis Index ist der meisstverbreitete Weg um die Inflation zu berechnen.
+Dieser Index beinhaltet ein vordefinierter Katalog aus Preisen der wichtigsten Gütern und Dienstleistungen.
+Der Katalog beinhaltet Gruppen von Gütern, die nach ihrer Wichtigkeit für einen durchschnittlichen Menschen gewichtet sind.
+Einzelnen Gruppen können neu gewichtet um sich der stets wechselnden Bedürfnisen anzupassen.
+% TODO Vor/Nachteile
+Die Jährliche Inflationsrate kann mit folgender Formel berechnet werden:
+$$Inflation = \frac{CPI_{Jahresanfang} - CPI_{Jahresend}}{CPI_{Jahresanfang}} \times 100$$
+
+\subsubsection{Personal Consumption Expeditures}
+
+\subsection{Geschichte}
+
+\subsubsection{USA - CPI}
+Bereits vor dem offiziellen "Consumer Price Index" wurden in den Vereinigten Staten regelmässige Statistiken zur Inflation publiziert.
+Da diese anfänglichen Statistiken standen viel unter öffentlicher Kritik,
+da sie grösstenteils auf dem Preis von Nahrungsmittel basierten und dies zum Teil wenig Bezug zur allgemeine Inflation hat.
+Währent und nach dem ersten Weltkrieg wurden aufgrund hoher Inflation vermehrt umfangreichere Statistiken erstellt, die neben dem Preis von Nahrungsmittel auch noch Kleidung, Miete, Benzin, Elektrizität und weiteres aufgenommen.
+Der CPI, dazumals als "Cost of Living Index" bezeichnet, wurde 1921 als offizieller, nationaler Index erstellt und seither jährlich vom "Bureau of Labor Statistics" veröffentlicht.
+Basierend auf anderen Statistiken oder Schätzungen wurden Daten von 1913 an im Index einbezogen.
+Die Gewichtung der einzelnen Gruppen wurde basierend auf Resultaten von Umfragen erstellt und seit der Einführung des Indexes mehrmals angepasst.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				date coordinates in=x,
+				xmin=1913-01-01,
+				xmax=2024-01-01,
+				xtick distance=365.3 * 10,
+				xticklabel style={
+						rotate=90,
+						anchor=near xticklabel,
+					},
+				xticklabel=\year,
+				title={Inflation Data},
+				line width=1pt,
+				legend style={at={(0.03,0.9)},anchor=west}
+			]
+			\legend{USA}
+			\addplot[color=blue!50!cyan,smooth,tension=0.7,very thick] table [col sep=semicolon,x=Date,y=USA] {data/inflation.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Caption}
+	\label{fig:usa}
+\end{figure}
+
+
